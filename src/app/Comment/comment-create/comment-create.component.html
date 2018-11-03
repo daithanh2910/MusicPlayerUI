@@ -1,0 +1,12 @@
+
+<form [formGroup]="commentForm" #formDir="ngForm" (ngSubmit)="createComment()"[hidden]="!userID">
+  <tr>
+    <td><textarea type="textbox" formControlName = "CommentText" rows="5" cols="80" required></textarea></td>
+  </tr>
+  <tr *ngIf="CommentText.invalid && (formDir.onsubmitted || CommentText.touched)">
+    <span>Text is invalid</span>
+  </tr>
+  <tr>
+    <button> Input</button>
+  </tr>
+</form>

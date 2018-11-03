@@ -1,0 +1,14 @@
+<div *ngIf="postDetail" class="jumbotron">
+  <div *ngFor="let post of postDetail">
+      <h3 class="text-center">{{post.PostTitle}}</h3>
+      <p [innerHtml]="post.PostText"></p>
+      <p><strong>Created by: </strong>{{post.UserCreate}}</p>
+  </div>
+</div>
+<div>
+  <app-commnent-list-detail></app-commnent-list-detail>
+</div>
+<!-- 
+<div>
+  <app-comment-create></app-comment-create>
+</div> -->

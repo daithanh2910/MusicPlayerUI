@@ -1,0 +1,34 @@
+<p>
+  post-create works!
+</p>
+<form [formGroup]="form" (ngSubmit)="createNewPost()">
+  <table>
+    <tr>
+      <td>Post Description</td>
+      <input class="form-control" formControlName="PostDescription" required>
+    </tr>
+    <tr>
+      <td>Post Title</td>
+      <input formControlName="PostTitle" required>
+    </tr>
+    <tr>
+      <td>Post Text</td>
+      <ckeditor formControlName="PostText"></ckeditor>
+      <!-- <textarea type="textbox" formControlName="PostText" required rows="10" cols="50"></textarea> -->
+    </tr>
+    <tr>Image</tr>
+    <td>
+      <input type="file" value="Image" formControlName="PostImage" (change)="onFileChange($event)" #fileInput id="PostImage">
+    </td>
+    <!-- <tr>
+      <td>
+        <input fomrControlName="UserID">
+      </td>
+    </tr> -->
+    <tr>
+      <td>
+        <button>Create Post</button>
+      </td>
+    </tr>
+  </table>
+</form>

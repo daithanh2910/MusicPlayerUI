@@ -1,0 +1,25 @@
+<section>Edit</section>
+<form [formGroup]="updatePostForm" (ngSubmit)="updatePost()">
+  <table>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Post Description</td>
+      <input formControlName="PostDescription" required>
+    </tr>
+    <tr>
+      <td>Post Title</td>
+      <input formControlName="PostTitle" required>
+    </tr>
+    <tr>
+      <td>Post Text</td>
+      <textarea type="textbox" formControlName="PostText"required rows="10" cols="50"></textarea>
+    </tr>
+    <tr>
+      <td>
+        <button>Update Post</button>
+      </td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,32 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-2">
+                <a [routerLink]="['Post']">Home</a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['RegisterUser']">Create new user</a>
+            </div>
+            <div class="col-md-3">
+                <a [routerLink]="['PostCreate']">Create new post</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="col-md-12" *ngIf="!isLogin()">
+            <a [routerLink]="['Login']">Login</a>
+        </div>
+        <div class="col-md" *ngIf="isLogin()">
+            <p>
+                <span>{{userLoginName}} </span>
+                <a href="" (click)="logOut()">Logout</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container body-content">
+    <router-outlet></router-outlet>
+</div>
+
+<!--  -->

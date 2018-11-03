@@ -1,0 +1,14 @@
+<hr>
+<section>Comments</section><br>
+<div *ngIf="commentDetail">
+  <div *ngFor="let comment of commentDetail">
+    <p>{{comment.CommentText}}</p>
+    <p><strong>Comment by: </strong> {{comment.CommentUser}}</p>
+    <p>--------------------------------</p>
+  </div>  
+  <hr>
+</div>
+
+<app-comment-create (comments)="onComment()">
+
+</app-comment-create>

@@ -1,0 +1,78 @@
+<button (click)="getAllPost()">
+  Get List of Post</button>
+<div *ngIf="postList">
+  <h2>Post List Detail</h2>
+  <div>
+    <ul class>
+      <li *ngFor="let post of postList">
+        <span>Post Tittle: {{post.PostTitle}}</span>
+        <br>
+        <button (click)="getPostByID(post.ID)">Get Post Detail</button>
+        <button (click)="postUpdateFormCreator(post.ID)">Edit Post</button>
+      </li>
+    </ul> 
+  </div>
+</div>
+
+<div *ngIf="postDetail" class="jumbotron">
+  <h2 class="text-center">Post Description: {{postDetail.PostDescription}}</h2>
+  <h3 class="text-center">Post Title: {{postDetail.PostTitle}}</h3>
+  <p>{{postDetail.PostText}}</p>
+</div>
+
+
+<div>
+  <button (click)="postCreateFormCreator()">Open Post Create Form</button>
+
+  <div *ngIf="createPostForm">
+    <form [formGroup]="createPostForm" (ngSubmit)="createNewPost()">
+      <table>
+        <tr>
+          <td>Post Description</td>
+          <input class="form-control" formControlName="PostDescription" required>
+        </tr>
+        <tr>
+          <td>Post Title</td>
+          <input formControlName="PostTitle" required>
+        </tr>
+        <tr>
+          <td>Post Text</td>
+          <textarea type="textbox" formControlName="PostText" required rows="10" cols="50"></textarea>
+        </tr>
+        <tr>
+          <td>
+            <button>Create Post</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="updatePostForm">
+  <section>Edit</section>
+  <form [formGroup]="updatePostForm" (ngSubmit)="updatePost(this, postDetail)" *ngIf="postDetail">
+    <table>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Post Description</td>
+        <input formControlName="PostDescription" value="{{postDetail.PostDescription}}" required>
+      </tr>
+      <tr>
+        <td>Post Title</td>
+        <input formControlName="PostTitle" value="{{postDetail.PostTitle}}" required>
+      </tr>
+      <tr>
+        <td>Post Text</td>
+        <textarea type="textbox" formControlName="PostText" value="{{postDetail.PostText}}" required rows="10" cols="50"></textarea>
+      </tr>
+      <tr>
+        <td>
+          <button>Update Post</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

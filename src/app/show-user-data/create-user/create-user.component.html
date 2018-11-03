@@ -1,0 +1,51 @@
+<!-- <div>
+  <form [formGroup]="userInputForm" >
+   <table>
+     <tr>
+       <td>Enter Email</td><input formControlName ="Email" required minlength="5">
+     </tr>
+     <tr>
+       <td>Enter password</td><input type="password"formControlName = "Password" required minlength="5">
+     </tr>
+     <tr>
+       <td>Confirm Password</td><input type="password" formControlName ="ConfirmPassword" required minlength="5">
+     </tr>
+     <tr>
+       <td>
+         <input type="submit" value="Create" (click)="createNewUser()">
+       </td>
+     </tr>
+   </table>
+ </form>
+</div> -->
+
+<div class="row">
+    <div class="col-md">
+      <div class="card">
+        <div class="sm-jumbotron center-align">
+          <h2>User Registration</h2>
+        </div>
+        <form [formGroup]="userInputForm" >
+          <div class="row">
+            <div class="input-field col s6">
+              <input formControlName ="Email" required minlength="5">
+              <label>Email</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="password"formControlName = "Password" required minlength="5">
+              <label >Password</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="password" formControlName ="ConfirmPassword" required minlength="5">
+              <label>Confirm Password</label>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <button class="btn-large btn-submit" type="submit" (click)="createNewUser()">Submit</button>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>

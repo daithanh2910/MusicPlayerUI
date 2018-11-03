@@ -1,0 +1,43 @@
+<div class="jumbotron">
+  <h1>Single Page Application &nbsp;
+    <i class="glyphicon glyphicon-book"></i>
+  </h1>
+  <p class="lead">Single Page Application created by using Web API and Angular</p>
+  <p>
+    <a href="https://www.w3schools.com/bootstrap/" class="btn btn-primary btn-lg">Learn more about Glyphicon Bootstrap&raquo;</a>
+  </p>
+</div>
+
+
+<!-- 
+<div class="row">
+  <div class="col-md-4" *ngFor="let post of postList">
+    <div style="white-space:wrap; width:280px; overflow:hidden;text-overflow: ellipsis;">
+      <h2 class="col-md-12">{{post.PostDescription}}</h2>
+      <img [src]="'http://localhost:55056/Pictures/DescriptionPictures/' +post.PictureURL" class="img img-thumbnail" style="width:350px; height:200px;">
+    </div>
+    <p></p>
+    <p>
+      <a class="btn btn-success" [routerLink]="['/PostDetail/', post.ID]">Look for detail</a> &nbsp;
+      <a class="btn btn-warning" [routerLink]="['/PostEdit/',post.ID]">Edit this post</a>
+    </p>
+    <p>
+      <strong>Created by:</strong> {{post.UserCreate}}</p>
+  </div>
+</div> -->
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let post of postList">
+      <div style="white-space:nowrap; overflow:hidden;text-overflow: ellipsis; height:'200px;'" class="col-md-12">
+        <h2 class="col-md-12">{{post.PostDescription}}</h2>
+        <img [src]="'http://localhost:55056/Pictures/DescriptionPictures/' +post.PictureURL" class="img img-thumbnail" style="width:350px; height:200px;">
+      </div>
+      <p></p>
+      <p>
+        <a class="btn btn-success" [routerLink]="['/PostDetail/', post.ID]">Look for detail</a> &nbsp;
+        <a class="btn btn-warning" [routerLink]="['/PostEdit/',post.ID]">Edit this post</a>
+      </p>
+      <p>
+        <strong>Created by:</strong> {{post.UserCreate}}</p>
+    </div>
+  </div>

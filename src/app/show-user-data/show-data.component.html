@@ -1,0 +1,23 @@
+<button (click)="getAllUser()">Get user list</button>
+<div *ngIf="usersInfor">
+        <h2>My User List</h2>
+        <ul class>
+          <li *ngFor="let userInfor of usersInfor">
+            <span >user Id: {{userInfor.ID}}  </span><br>
+            <button (click)="getUserByID(userInfor.ID)">Get User Detail</button>
+          </li>
+        </ul>
+</div>
+
+<br>
+<!-- <button (click)="getUserByID(2)">Detail user 2</button> -->
+
+<div *ngIf ="userDetail">
+    <h2>User {{userDetail.ID}} detail</h2>
+        
+    <h3>User ID: {{userDetail.ID}}</h3>
+     <h3>User Name: {{userDetail.Name}}</h3>
+</div>
+
+<a [routerLink] = "['/RegisterUser']" >Create new user</a>
+<router-outlet></router-outlet>
